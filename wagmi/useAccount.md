@@ -3,31 +3,31 @@
 ### parameters
 #### config 
     Config | undefined
-    In most case,this parameter does not need to be configured
+In most case,this parameter does not need to be configured
 ### returnType
 
 #### address 
     Address | undefined
-    Connected addresses from connector 
-    Defaults to first address in addresses 
+Connected addresses from connector   
+Defaults to first address in addresses 
 #### addresses 
     readlony Address[] | undefined
-    Connected addresses from connector 
+Connected addresses from connector 
 #### chain
     Chain | undefined
-    Connected chain from connector.If chain is not configured by config，it will be  **undefined**
+Connected chain from connector.If chain is not configured by config，it will be  **undefined**
 
 #### chainId
     number | undefined
-    Connected chain id from connector 
+Connected chain id from connector 
 
 #### connector
     Connector | undefined
-    Connected connector
+Connected connector
 
 #### isConnecting/isReconnecting/isConnected/isDisconnected
     boolen
-    Boolen variables derived from status
+Boolen variables derived from status
 
 #### status
     'connecting'|'reconnecting'|'connected'|'disconnected'
@@ -37,7 +37,7 @@
  + disconnected: no connection to any connector
 
 
-### Example
+### Usage
 
 ```
  import { useAccount } from 'wagmi'
@@ -53,6 +53,8 @@
  }
 
 ```
+
+
 
 
 
