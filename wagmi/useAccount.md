@@ -1,36 +1,36 @@
-## useAccount
+# useAccount
  
 ### parameters
 #### config 
-    Config | undefined
+`Config | undefined`  
 In most case,this parameter does not need to be configured
 ### returnType
 
 #### address 
-    Address | undefined
+`Address | undefined`  
 Connected addresses from connector   
 Defaults to first address in addresses 
 #### addresses 
-    readlony Address[] | undefined
+`readlony Address[] | undefined`  
 Connected addresses from connector 
 #### chain
-    Chain | undefined
+`Chain | undefined`  
 Connected chain from connector.If chain is not configured by config，it will be  **undefined**
 
 #### chainId
-    number | undefined
+`number | undefined`  
 Connected chain id from connector 
 
 #### connector
-    Connector | undefined
+`Connector | undefined`  
 Connected connector
 
 #### isConnecting/isReconnecting/isConnected/isDisconnected
-    boolen
+`boolen`  
 Boolen variables derived from status
 
 #### status
-    'connecting'|'reconnecting'|'connected'|'disconnected'
+`'connecting'|'reconnecting'|'connected'|'disconnected'`  
  + connected 已经连接
  + connecting 正在连接
  + reconnecting: attempting to re-establish connection to one or more connectors
@@ -39,7 +39,7 @@ Boolen variables derived from status
 
 ### Usage
 
-```
+``` tsx
  import { useAccount } from 'wagmi'
 
  function App(){

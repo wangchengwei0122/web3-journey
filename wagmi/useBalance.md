@@ -1,8 +1,8 @@
-## useBalance
-    Hook from fetching native currency or token balance
-### parameters
+# useBalance
+Hook from fetching native currency or token balance
+## parameters
     
-#### address
-    Address | undefined
+### address
+`Address | undefined`  
 Address to get balance for 
-### return Types
+## return Types

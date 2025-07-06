@@ -1,10 +1,8 @@
-## useAccountEffect
-    Hook for listening to account lifecycle events
+# useAccountEffect
+Hook for listening to account lifecycle events
 
-
-
-### Usage
-``` 
+## Usage
+```  tsx
 import { useAccountEffect } from 'wagmi'
  function APP(){
     useAccountEffect({
@@ -15,7 +13,6 @@ import { useAccountEffect } from 'wagmi'
             console.log('onDisconnect')
         }
     })
-
  }
 
 ```
