@@ -30,3 +30,72 @@ async function getAccounts() {
 }
 ``` 
 3. `eth_chainId`
+```
+ async function getChainId() {
+  const chainId = await window.ethereum.request({
+    method: 'eth_chainId',
+  })
+  console.log('当前链 ID:', parseInt(chainId, 16))
+}
+```
+4. `eth_getBalance`
+```
+async function getBalance() {
+  const accounts = await window.ethereum.request({ method: 'eth_accounts' })
+  const balance = await window.ethereum.request({
+    method: 'eth_getBalance',
+    params: [accounts[0], 'latest'],
+  })
+  console.log('余额（Wei）:', BigInt(balance))
+}
+```
+5. `eth_call`
+```
+async function callContractRead() {
+  const contractAddress = '0xYourContractAddress'
+  const userAddress = '0xUserAddress'
+  const functionSelector = '0x70a08231' // balanceOf(address) 的函数选择器
+
+  const data = functionSelector + userAddress.slice(2).padStart(64, '0')
+
+  const result = await window.ethereum.request({
+    method: 'eth_call',
+    params: [
+      {
+        to: contractAddress,
+        data: data,
+      },
+      'latest',
+    ],
+  })
+
+  console.log('代币余额:', BigInt(result))
+}
+```
+6. `eth_sendTransaction`
+```
+async function sendTransaction() {
+  const accounts = await window.ethereum.request({ method: 'eth_accounts' })
+  const txHash = await window.ethereum.request({
+    method: 'eth_sendTransaction',
+    params: [
+      {
+        from: accounts[0],
+        to: '0xReceiverAddress',
+        value: '0x2386F26FC10000', // 0.01 ETH = 10^16 Wei
+      },
+    ],
+  })
+
+  console.log('交易已发送，哈希：', txHash)
+}
+```
+7. `eth_blockNumber`
+```
+async function getBlockNumber() {
+  const blockNumberHex = await window.ethereum.request({
+    method: 'eth_blockNumber',
+  })
+  console.log('最新区块号:', parseInt(blockNumberHex, 16))
+}
+```
