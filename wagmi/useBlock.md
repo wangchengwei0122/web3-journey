@@ -20,9 +20,6 @@
  
 
 
-
-
-
 ## Usage
 ``` tsx
  improt { useBlock } from 'wagmi'
